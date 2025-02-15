@@ -17,22 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    // Botón de tema oscuro
-    const themeToggle = document.createElement('button');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    themeToggle.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 12px 18px;
-        border-radius: 50%;
-        background: #2A9D8F;
-        color: white;
-        border: none;
-        cursor: pointer;
-        z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    `;
+
 
     // Función para cambiar tema
     const toggleTheme = () => {
