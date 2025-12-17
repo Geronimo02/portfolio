@@ -47,6 +47,25 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
 
+/* Dark mode: poner en negro el texto de la sección "empresa" cuando se active modo oscuro */
+@media (prefers-color-scheme: dark){
+  .empresa-header h3,
+  .empresa-tagline,
+  .empresa-descripcion{
+    color: #000 !important;
+  }
+}
+
+/* Soporte para toggles que añadan una clase .dark al body */
+body.dark .empresa-header h3,
+.dark .empresa-header h3,
+body.dark .empresa-tagline,
+.dark .empresa-tagline,
+body.dark .empresa-descripcion,
+.dark .empresa-descripcion{
+  color: #000 !important;
+}
+
 /* Accesibilidad: focus visible bien */
 :focus-visible{
   outline: none;
