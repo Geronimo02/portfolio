@@ -722,7 +722,7 @@ h1, h2 {
 }
 
 .btn-submit {
-    background: var(--primary);
+    background: linear-gradient(135deg, #25D366 0%, #1FA851 100%);
     color: white;
     border: none;
     padding: 14px 40px;
@@ -734,12 +734,13 @@ h1, h2 {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .btn-submit:hover {
-    background: #238276;
+    background: linear-gradient(135deg, #1FA851 0%, #1A8442 100%);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(42,157,143,0.3);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
 }
 
 .form-status {

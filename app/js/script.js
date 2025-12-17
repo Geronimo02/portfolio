@@ -26,59 +26,52 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(card);
     });
 
-    // ==================== FORMULARIO DE CONTACTO ====================
+    // ==================== FORMULARIO DE CONTACTO (Envío por WhatsApp) ====================
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
 
-            // Simulación de envío (en producción conectar con backend o servicio)
-            formStatus.className = 'form-status';
-            formStatus.textContent = 'Enviando mensaje...';
+            // Construir el mensaje para WhatsApp
+            const whatsappMessage = `Hola Geronimo,
+
+*Nombre:* ${name}
+*Email:* ${email}
+*Asunto:* ${subject}
+
+*Mensaje:*
+${message}`;
+
+            // Encodificar el mensaje para URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Número de WhatsApp: +54 92494589884
+            const whatsappURL = `https://wa.me/5492494589884?text=${encodedMessage}`;
+
+            // Mostrar mensaje de estado
+            formStatus.className = 'form-status success';
+            formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Redirigiendo a WhatsApp...';
             formStatus.style.display = 'block';
 
-            // Simular delay de envío
+            // Abrir WhatsApp después de 1 segundo
             setTimeout(() => {
-                formStatus.className = 'form-status success';
-                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente! Te responderé pronto.';
+                window.open(whatsappURL, '_blank');
+                
+                // Limpiar formulario
                 contactForm.reset();
-
-                // Ocultar mensaje después de 5 segundos
+                
+                // Ocultar mensaje después de 3 segundos
                 setTimeout(() => {
                     formStatus.style.display = 'none';
-                }, 5000);
-            }, 1500);
-
-            // En producción, usar fetch o emailjs:
-            /*
-            try {
-                const response = await fetch('/api/contact', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(formData)
-                });
-                
-                if (response.ok) {
-                    formStatus.className = 'form-status success';
-                    formStatus.textContent = '¡Mensaje enviado exitosamente!';
-                    contactForm.reset();
-                } else {
-                    throw new Error('Error en el envío');
-                }
-            } catch (error) {
-                formStatus.className = 'form-status error';
-                formStatus.textContent = 'Error al enviar el mensaje. Por favor, intenta nuevamente.';
-            }
-            */
+                }, 3000);
+            }, 1000);
         });
     }
 
