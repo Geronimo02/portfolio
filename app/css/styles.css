@@ -587,6 +587,11 @@ section p{
   background: linear-gradient(135deg, #E4405F, #d33366);
 }
 
+/* Botones para enlaces AI (Figma / Canva) */
+.btn-ai{
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+}
+
 /* ============================================
    INTEGRATION
 ============================================ */
