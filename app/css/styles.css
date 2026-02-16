@@ -54,6 +54,16 @@ button{font:inherit}
   .empresa-descripcion{
     color: #000 !important;
   }
+  .results-grid .result-card {
+    background: #222 !important;
+    color: #fff !important;
+    border-color: #444 !important;
+  }
+  .results-grid .result-card p,
+  .results-grid .result-label,
+  .results-grid .result-number {
+    color: #fff !important;
+  }
 }
 
 /* Soporte para toggles que añadan una clase .dark al body */
@@ -64,6 +74,18 @@ body.dark .empresa-tagline,
 body.dark .empresa-descripcion,
 .dark .empresa-descripcion{
   color: #000 !important;
+}
+
+/* Invertir colores de resultados y logros en modo oscuro */
+body.dark .results-grid .result-card {
+  background: #222 !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+body.dark .results-grid .result-card p,
+body.dark .results-grid .result-label,
+body.dark .results-grid .result-number {
+  color: #fff !important;
 }
 
 /* Accesibilidad: focus visible bien */

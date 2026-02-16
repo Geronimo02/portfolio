@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+        // ==================== TOGGLE MODO OSCURO ====================
+        const toggleBtn = document.getElementById('toggle-dark');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark');
+            });
+        }
     // ==================== ANIMACIONES AL SCROLL ====================
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
