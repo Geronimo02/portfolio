@@ -497,6 +497,108 @@ section p{
   text-overflow: ellipsis;     /* corta con ... si es largo */
 }
 
+.project-summary{
+  padding: 10px 12px;
+  font-size: .84rem;
+  line-height: 1.45;
+  color: var(--muted);
+  text-align: left;
+}
+
+/* ============================================
+   APPS SHOWCASE
+============================================ */
+.apps-intro{
+  margin-top: 8px;
+  margin-bottom: 10px;
+  font-size: .92rem;
+  color: #64748b;
+}
+
+.apps-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.app-feature{
+  background: linear-gradient(180deg, #ffffff, #f8fbfc);
+  border: 1px solid rgba(42,157,143,.28);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--dur-2) var(--ease), box-shadow var(--dur-2) var(--ease), border-color var(--dur-2) var(--ease);
+}
+
+.app-feature:hover{
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(42,157,143,.55);
+}
+
+.app-feature-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.app-feature-logo{
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f6f8fa, #edf2f7);
+  padding: 8px;
+  border: 1px solid rgba(15,23,42,.08);
+}
+
+.app-feature h4{
+  font-size: 1.04rem;
+  color: var(--dark);
+  margin-bottom: 2px;
+}
+
+.app-feature-type{
+  display: inline-block;
+  font-size: .74rem;
+  font-weight: 700;
+  color: #0f766e;
+  background: rgba(16,185,129,.15);
+  border: 1px solid rgba(16,185,129,.28);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.app-feature-text{
+  font-size: .88rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 8px;
+}
+
+.app-feature-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border: 1px solid rgba(31,122,109,.9);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font-size: .84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+
+.app-feature-link:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(31,122,109,.25);
+}
+
 .project-badge{
   position:absolute;
   top: 10px;
@@ -835,6 +937,7 @@ section p{
   .results-grid,
   .cert-grid{grid-template-columns: repeat(2, 1fr)}
   .project-grid{grid-template-columns: repeat(3, 1fr)}
+  .apps-grid{grid-template-columns: repeat(2, 1fr)}
   .empresa-servicios{grid-template-columns: repeat(3, 1fr)}
   .empresa-links{grid-template-columns: repeat(2, 1fr)}
   .form-row{flex-direction: row}
@@ -974,6 +1077,24 @@ body.dark-theme .project-logo{
 body.dark-theme .project-card a{
   background: rgba(10, 16, 28, .55);
   border-top-color: rgba(42,157,143,.20);
+}
+
+/* Apps showcase */
+body.dark-theme .app-feature{
+  background: linear-gradient(180deg, rgba(13,20,36,.92), rgba(10,16,30,.92));
+  border-color: rgba(42,157,143,.42);
+}
+body.dark-theme .app-feature h4{color:#e8f0ff}
+body.dark-theme .apps-intro,
+body.dark-theme .app-feature-text{color:#aab8cf}
+body.dark-theme .app-feature-logo{
+  background: linear-gradient(180deg, rgba(21,33,56,.95), rgba(15,26,44,.95));
+  border-color: rgba(125,147,187,.22);
+}
+body.dark-theme .app-feature-type{
+  color: #67e8f9;
+  background: rgba(6, 182, 212, .14);
+  border-color: rgba(34, 211, 238, .35);
 }
 
 /* Chips/pills (Páginas Web / Bots / Sistemas) — bien visibles */
